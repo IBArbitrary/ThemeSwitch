@@ -13,8 +13,7 @@
   },
   "permissions": [
     "management",
-    "storage",
-    "nativeMessaging"
+    "storage"
   ],
   "action": {
     "default_title": "Toggle Theme",

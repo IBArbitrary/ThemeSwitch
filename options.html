@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Theme Toggle Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Theme Toggle Options</h1>
+    <p>Select your preferred light and dark themes from the dropdowns below.</p>
+    
+    <div class="form-group">
+      <label for="dark-theme">Dark Theme:</label>
+      <select id="dark-theme">
+        <option value="">-- Select a theme --</option>
+      </select>
+    </div>
+    
+    <div class="form-group">
+      <label for="light-theme">Light Theme:</label>
+      <select id="light-theme">
+        <option value="">-- Select a theme --</option>
+      </select>
+    </div>
+    
+    <div id="status" class="status"></div>
+    
+    <div class="button-group">
+      <button id="save" class="btn btn-primary">Save Settings</button>
+      <button id="reset" class="btn btn-secondary">Reset to Default</button>
+    </div>
+  </div>
+  
+  <script src="options.js"></script>
+</body>
+</html>

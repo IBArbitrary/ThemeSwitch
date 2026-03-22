@@ -1,0 +1,22 @@
+# Credentials and private files
+.sign-credentials
+.env
+.env.local
+
+# Node modules and build artifacts
+node_modules/
+web-ext-artifacts/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*~
+
+# Temporary files
+*.tmp
+*.bak

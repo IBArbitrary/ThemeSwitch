@@ -1,0 +1,7 @@
+{
+  "name": "theme_toggle",
+  "description": "Theme Toggle Native Helper",
+  "path": "/home/kumarr/Temp/theme-toggle/native/theme-toggle-native.sh",
+  "type": "stdio",
+  "allowed_extensions": ["theme-toggle@extension.local"]
+}

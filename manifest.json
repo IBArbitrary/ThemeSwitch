@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Theme Toggle",
+  "name": "Theme Switch",
   "version": "1.0.5",
   "description": "Toggle between two Firefox themes with a single click",
   "developer": {

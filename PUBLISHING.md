@@ -1,4 +1,4 @@
-# Publishing Guide for Theme Toggle Extension
+# Publishing Guide for Theme Switch Extension
 
 ## Changes Made to Manifest.json
 
@@ -12,7 +12,7 @@
 ```json
 {
   "manifest_version": 3,
-  "name": "Theme Toggle",
+  "name": "Theme Switch",
   "version": "1.0",
   "description": "Toggle between two Firefox themes with a single click",
   "developer": {
@@ -83,7 +83,7 @@ zip -r theme-toggle-1.0.zip \
 **Required Information:**
 - **Developer Name:** Rajeshkumar Kumar ✓
 - **Contact Email:** k.rajeshkumar.1411@gmail.com
-- **Extension Name:** Theme Toggle ✓
+- **Extension Name:** Theme Switch ✓
 - **Version:** 1.0 ✓
 
 **Files to Prepare:**

@@ -9,7 +9,7 @@ A Firefox extension to quickly toggle between light and dark themes with a singl
 - Icon color changes to indicate current theme state
 - Persists your theme preferences across sessions
 - Starts with dark theme by default
-- Manifest V3 compatible (Firefox 109+)
+- Manifest V3 compatible (Firefox 140+)
 
 ## Installation
 
@@ -49,7 +49,7 @@ This extension requires the following permissions:
 
 ## Compatibility
 
-- Firefox 109.0 or later
+- Firefox 140.0 or later
 - Manifest V3 compliant
 
 ## Development

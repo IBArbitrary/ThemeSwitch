@@ -1,14 +1,14 @@
-# Credentials and private files
+# Credentials and private files - NEVER COMMIT THESE
 .sign-credentials
 .env
 .env.local
+STATE.md
 
 # Node modules and build artifacts
 node_modules/
 web-ext-artifacts/
 
-# Documentation and state files
-STATE.md
+# Documentation files (may contain sensitive info)
 QUICKSTART.md
 PUBLISHING.md
 SIGNING.md
@@ -19,6 +19,9 @@ sign-extension.sh
 
 # AMO upload tracking
 .amo-upload-uuid
+
+# Web-ext config (local build config)
+.web-ext-config.cjs
 
 # OS files
 .DS_Store

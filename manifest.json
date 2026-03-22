@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Theme Switch",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Quickly toggle between light and dark Firefox themes with a single click. Supports external control via statefile for system theme integration.",
   "developer": {
     "name": "Rajeshkumar Kumar"

@@ -10,7 +10,7 @@ A Firefox extension to toggle between light and dark themes, with support for ex
 - Icon color changes to indicate current theme state
 - Persists your theme preferences across sessions
 - Reads `~/Data/.theme-state` on startup to sync with system theme
-- Manifest V3 compatible (Firefox 140+)
+- Manifest V3 compatible (Firefox 142+)
 
 ## Statefile Integration
 
@@ -94,7 +94,7 @@ The icon changes color to indicate the active theme:
 
 ## Compatibility
 
-- Firefox 140.0 or later
+- Firefox 142.0 or later
 - Linux only (native messaging requires shell script)
 - Requires `inotify-tools` package
 

@@ -46,14 +46,23 @@ async function toggleTheme() {
   }
 }
 
+let initializedFromStateFile = false;
+let initTimeoutId = null;
+
 async function initializeExtension() {
   const data = await getStorageData();
-  const { lightThemeId, darkThemeId, currentTheme = 'dark' } = data;
+  const { lightThemeId, darkThemeId } = data;
 
   if (darkThemeId && lightThemeId) {
-    await enableTheme(darkThemeId);
-    await setStorageData({ currentTheme: 'dark' });
-    await updateIcon(true);
+    updateIcon(true);
+    initTimeoutId = setTimeout(async () => {
+      if (!initializedFromStateFile) {
+        console.log('No statefile detected, defaulting to dark theme');
+        await enableTheme(darkThemeId);
+        await setStorageData({ currentTheme: 'dark' });
+        await updateIcon(true);
+      }
+    }, 2000);
   } else {
     await updateIcon(true);
   }
@@ -98,6 +107,12 @@ function connectNative() {
         if (!lightThemeId || !darkThemeId) {
           console.log('Themes not configured yet');
           return;
+        }
+        
+        initializedFromStateFile = true;
+        if (initTimeoutId) {
+          clearTimeout(initTimeoutId);
+          initTimeoutId = null;
         }
         
         const themeId = response.theme === 'L' ? lightThemeId : darkThemeId;

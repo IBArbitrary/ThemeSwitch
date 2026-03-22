@@ -2,13 +2,14 @@
   "manifest_version": 3,
   "name": "Theme Switch",
   "version": "1.0.5",
-  "description": "Toggle between two Firefox themes with a single click",
+  "description": "Quickly toggle between light and dark Firefox themes with a single click. Supports external control via statefile for system theme integration.",
   "developer": {
     "name": "Rajeshkumar Kumar"
   },
   "browser_specific_settings": {
     "gecko": {
-      "id": "theme-toggle@extension.local"
+      "id": "theme-switch-statefile@rajeshkumar.dev",
+      "strict_min_version": "109.0"
     }
   },
   "permissions": [
@@ -17,7 +18,7 @@
     "nativeMessaging"
   ],
   "action": {
-    "default_title": "Toggle Theme",
+    "default_title": "Switch Theme",
     "default_icon": {
       "48": "icons/icon-dark-48.png",
       "96": "icons/icon-dark-96.png"

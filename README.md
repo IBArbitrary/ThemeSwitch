@@ -1,111 +1,122 @@
-# Theme Switch Extension
+# Theme Switch (Statefile Edition)
 
-A Firefox extension that enables toggling between two themes (light and dark) with a single click.
+A Firefox extension to toggle between light and dark themes, with support for external control via a statefile for system theme integration.
 
 ## Features
 
-- Toggle between two themes with one click
+- One-click theme switching between two configured themes
+- **External control via statefile** - integrate with your system theme (KDE, GNOME, etc.)
 - Select any installed Firefox themes for light and dark modes
-- Icon changes color to indicate current theme state
-- Starts with dark theme by default
-- Handles theme changes initiated outside the extension
+- Icon color changes to indicate current theme state
+- Persists your theme preferences across sessions
+- Reads `~/Data/.theme-state` on startup to sync with system theme
+- Manifest V3 compatible (Firefox 109+)
+
+## Statefile Integration
+
+This edition supports external control through a statefile:
+
+1. Create a file at `~/Data/.theme-state`
+2. Write `D` for dark theme or `L` for light theme
+3. The extension will automatically switch to match
+
+### Example Integration Script
+
+```bash
+#!/bin/bash
+# Sync Firefox theme with KDE theme
+if [ "$KDE_SESSION_UID" ]; then
+    kwriteconfig5 --file ~/.config/kdeglobals --group KDE --key ColorScheme "BreezeDark"
+    echo "D" > ~/Data/.theme-state
+    qdbus org.kde.KWin /KWin reconfigure
+fi
+```
 
 ## Installation
 
-### Installing the Extension
+### Prerequisites
 
-1. Open Firefox
-2. Navigate to `about:debugging#/runtime/this-firefox`
+```bash
+# Install inotify-tools (required for statefile watching)
+sudo apt install inotify-tools
+
+# Create the state directory
+mkdir -p ~/Data
+echo "D" > ~/Data/.theme-state  # Start with dark theme
+```
+
+### Native Messaging Setup
+
+```bash
+# Create native messaging hosts directory
+mkdir -p ~/.mozilla/native-messaging-hosts
+
+# Link the native manifest (adjust path as needed)
+ln -sf $(pwd)/native/theme-toggle.json ~/.mozilla/native-messaging-hosts/theme_toggle.json
+```
+
+### From Source
+1. Download or clone this repository
+2. Open Firefox and navigate to `about:debugging#/runtime/this-firefox`
 3. Click "Load Temporary Add-on..."
-4. Select the `manifest.json` file from this directory
-5. The extension will now be installed
-
-### First-Time Setup
-
-1. Click on the "Theme Switch" extension icon in your toolbar
-2. The extension will open its options page (or right-click and select "Options")
-3. Select your preferred theme from the "Dark Theme" dropdown
-4. Select your preferred theme from the "Light Theme" dropdown
-5. Click "Save Settings"
-6. Your dark theme will be activated immediately
+4. Select the `manifest.json` file
+5. Configure your themes in the extension options
 
 ## Usage
 
-### Toggling Between Themes
-
-Click the Theme Switch icon in your Firefox toolbar to switch between your selected light and dark themes. The extension icon will change color to indicate which theme is currently active:
-
-- **Dark moon icon** (dark background): Dark theme is active
-- **Light sun icon** (light background): Light theme is active
-
-### Changing Theme Preferences
-
-1. Right-click the Theme Switch icon
-2. Select "Options"
-3. Select new themes from the dropdowns
+### First-Time Setup
+1. Right-click the toolbar icon and select "Options"
+2. Select your preferred dark theme from the dropdown
+3. Select your preferred light theme from the dropdown
 4. Click "Save Settings"
-5. The extension will switch to your new dark theme
 
-## Technical Details
+### Manual Toggle
+Click the toolbar icon to instantly switch between your configured themes.
 
-### Extension Structure
-
-- `manifest.json` - Extension manifest with permissions and configuration
-- `background.js` - Background script handling toggle logic and state management
-- `options.html` - Preferences page HTML
-- `options.js` - Preferences page logic
-- `options.css` - Preferences page styling
-- `icons/` - Directory containing extension icons
-
-### APIs Used
-
-- `browser.management` - To list and enable installed themes
-- `browser.storage` - To persist theme preferences and current state
-- `browser.action` - To handle toolbar button clicks and icon updates
-
-### Browser Compatibility
-
-- Requires Firefox 109+ (Manifest V3 support)
-- Uses modern WebExtension APIs
-
-### Data Stored
-
-The extension stores the following data in `browser.storage.local`:
-
-```json
-{
-  "lightThemeId": "theme-extension-id",
-  "darkThemeId": "another-theme-extension-id",
-  "currentTheme": "dark"
-}
+### Automatic Toggle (via Statefile)
+Write to the statefile to trigger automatic theme switching:
+```bash
+echo "L" > ~/Data/.theme-state  # Switch to light theme
+echo "D" > ~/Data/.theme-state  # Switch to dark theme
 ```
 
-## Troubleshooting
+The icon changes color to indicate the active theme:
+- White icon: Dark theme is active
+- Black icon: Light theme is active
 
-### Extension icon not responding
+## Permissions
 
-Ensure both light and dark themes are selected in the options page. The toggle will not work if themes are not configured.
+| Permission | Purpose |
+|------------|---------|
+| `management` | List and enable installed themes |
+| `storage` | Save your theme preferences |
+| `nativeMessaging` | Communicate with native script for statefile watching |
 
-### Theme not switching
+## Compatibility
 
-Check that:
-- Both themes are selected and saved
-- The themes have not been uninstalled from Firefox
-- There are no console errors (F12 to open developer tools)
+- Firefox 109.0 or later
+- Linux only (native messaging requires shell script)
+- Requires `inotify-tools` package
 
-### Icon not updating
+## Project Structure
 
-If the icon doesn't change color after toggling, try reloading the extension or restarting Firefox.
-
-## Development
-
-To modify and reload the extension during development:
-
-1. Make your changes to the files
-2. In `about:debugging#/runtime/this-firefox`, find the Theme Switch extension
-3. Click the "Reload" button
-4. Refresh any open extension pages (like options)
+```
+theme-switch/
+├── manifest.json              # Extension manifest
+├── background.js              # Toggle logic + native messaging
+├── options.html               # Preferences page
+├── options.js                 # Preferences logic
+├── options.css                # Preferences styling
+├── icons/                     # Extension icons
+└── native/
+    ├── theme-toggle-native.sh # Statefile watcher
+    └── theme-toggle.json      # Native manifest
+```
 
 ## License
 
-This extension is provided as-is for educational and personal use.
+MIT License - see [LICENSE](LICENSE) file for details.
+
+## Author
+
+**Rajeshkumar Kumar**

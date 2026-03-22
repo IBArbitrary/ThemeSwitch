@@ -10,7 +10,11 @@
     "gecko": {
       "id": "theme-switch-statefile@rajeshkumar.dev",
       "strict_min_version": "109.0"
-    }
+    },
+    "gecko_android": {}
+  },
+  "data_collection_permissions": {
+    "built-in-telemetry": false
   },
   "permissions": [
     "management",

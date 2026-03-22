@@ -7,6 +7,19 @@
 node_modules/
 web-ext-artifacts/
 
+# Documentation and state files
+STATE.md
+QUICKSTART.md
+PUBLISHING.md
+SIGNING.md
+
+# Build scripts
+build-extension.sh
+sign-extension.sh
+
+# AMO upload tracking
+.amo-upload-uuid
+
 # OS files
 .DS_Store
 Thumbs.db

@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Theme Toggle Extension - Signing Script
+# Theme Switch Extension - Signing Script
 # This script signs your extension for distribution
 
-echo "=== Theme Toggle Extension Signing Script ==="
+echo "=== Theme Switch Extension Signing Script ==="
 echo ""
 
 # Load NVM and Node.js

@@ -1,4 +1,4 @@
-# QUICK START - Theme Toggle Extension
+# QUICK START - Theme Switch Extension
 
 **Last Updated:** March 19, 2026
 **Status:** ✅ READY TO USE
@@ -73,7 +73,7 @@ export NVM_DIR="$HOME/.nvm"
 ```
 1. Open Firefox
 2. Navigate to: about:debugging#/runtime/this-firefox
-3. Find "Theme Toggle"
+3. Find "Theme Switch"
 4. Click "Remove"
 5. Reinstall the .xpi file
 ```
@@ -90,7 +90,7 @@ export NVM_DIR="$HOME/.nvm"
 ## 🔧 I'm Having Problems
 
 ### Extension Not Showing?
-- Try: about:addons → Extensions → Theme Toggle → Enable
+- Try: about:addons → Extensions → Theme Switch → Enable
 - Check: about:debugging for loading errors
 
 ### Themes Not Switching?
@@ -151,7 +151,7 @@ export NVM_DIR="$HOME/.nvm"
 ## 📊 Project Stats
 
 **Extension Details:**
-- Name: Theme Toggle
+- Name: Theme Switch
 - Version: 1.0.1
 - Developer: Rajeshkumar Kumar
 - License: None specified yet

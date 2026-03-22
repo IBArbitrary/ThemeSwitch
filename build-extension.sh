@@ -1,9 +1,9 @@
 #!/bin/bash
 
-# Theme Toggle Extension - Build Script
+# Theme Switch Extension - Build Script
 # Creates a local .xpi package without AMO signing
 
-echo "=== Theme Toggle Extension Build Script ==="
+echo "=== Theme Switch Extension Build Script ==="
 echo ""
 
 # Load NVM and Node.js

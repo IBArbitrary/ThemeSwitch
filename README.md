@@ -1,4 +1,4 @@
-# Theme Toggle Extension
+# Theme Switch Extension
 
 A Firefox extension that enables toggling between two themes (light and dark) with a single click.
 
@@ -22,7 +22,7 @@ A Firefox extension that enables toggling between two themes (light and dark) wi
 
 ### First-Time Setup
 
-1. Click on the "Theme Toggle" extension icon in your toolbar
+1. Click on the "Theme Switch" extension icon in your toolbar
 2. The extension will open its options page (or right-click and select "Options")
 3. Select your preferred theme from the "Dark Theme" dropdown
 4. Select your preferred theme from the "Light Theme" dropdown
@@ -33,14 +33,14 @@ A Firefox extension that enables toggling between two themes (light and dark) wi
 
 ### Toggling Between Themes
 
-Click the Theme Toggle icon in your Firefox toolbar to switch between your selected light and dark themes. The extension icon will change color to indicate which theme is currently active:
+Click the Theme Switch icon in your Firefox toolbar to switch between your selected light and dark themes. The extension icon will change color to indicate which theme is currently active:
 
 - **Dark moon icon** (dark background): Dark theme is active
 - **Light sun icon** (light background): Light theme is active
 
 ### Changing Theme Preferences
 
-1. Right-click the Theme Toggle icon
+1. Right-click the Theme Switch icon
 2. Select "Options"
 3. Select new themes from the dropdowns
 4. Click "Save Settings"
@@ -102,7 +102,7 @@ If the icon doesn't change color after toggling, try reloading the extension or 
 To modify and reload the extension during development:
 
 1. Make your changes to the files
-2. In `about:debugging#/runtime/this-firefox`, find the Theme Toggle extension
+2. In `about:debugging#/runtime/this-firefox`, find the Theme Switch extension
 3. Click the "Reload" button
 4. Refresh any open extension pages (like options)
 

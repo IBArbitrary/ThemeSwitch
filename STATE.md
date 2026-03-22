@@ -1,8 +1,8 @@
-# Theme Toggle Extension - Project State Save
+# Theme Switch Extension - Project State Save
 
 **Date Created:** March 19, 2026
 **Last Updated:** March 20, 2026
-**Project:** Firefox Theme Toggle Extension with Native Messaging
+**Project:** Firefox Theme Switch Extension with Native Messaging
 **Developer:** Rajeshkumar Kumar
 **Contact:** k.rajeshkumar.1411@gmail.com
 
@@ -102,7 +102,7 @@ Additional:
 ## Current Extension Details
 
 **Manifest Version:** 3
-**Extension Name:** Theme Toggle
+**Extension Name:** Theme Switch
 **Developer:** Rajeshkumar Kumar
 **Version:** 1.0.5
 **Extension ID:** theme-toggle@extension.local
@@ -144,7 +144,7 @@ qdbus org.kde.KWin /KWin reconfigure
 ```json
 {
   "manifest_version": 3,
-  "name": "Theme Toggle",
+  "name": "Theme Switch",
   "version": "1.0.5",
   "description": "Toggle between two Firefox themes with a single click",
   "developer": {
@@ -220,7 +220,7 @@ done
 ```json
 {
   "name": "theme_toggle",
-  "description": "Theme Toggle Native Helper",
+  "description": "Theme Switch Native Helper",
   "path": "/home/kumarr/Temp/theme-toggle/native/theme-toggle-native.sh",
   "type": "stdio",
   "allowed_extensions": ["theme-toggle@extension.local"]
@@ -421,7 +421,7 @@ export NVM_DIR="$HOME/.nvm"
 
 ## Summary
 
-Theme Toggle Extension is **complete and fully functional** with:
+Theme Switch Extension is **complete and fully functional** with:
 - Manual theme toggling via toolbar button
 - External control via native messaging (reads `~/Data/.theme-state`)
 - Custom icons with proper visibility

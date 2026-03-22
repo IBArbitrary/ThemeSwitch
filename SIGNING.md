@@ -1,4 +1,4 @@
-# Signing Theme Toggle Extension
+# Signing Theme Switch Extension
 
 Your extension is ready to be signed! Here's how to do it:
 
@@ -99,7 +99,7 @@ cd /home/kumarr/Temp/theme-toggle
 
 **Expected Output:**
 ```
-=== Theme Toggle Extension Signing Script ===
+=== Theme Switch Extension Signing Script ===
 
 ✓ web-ext is installed (version: 10.0.0)
 ✓ Current directory: /home/kumarr/Temp/theme-toggle
@@ -172,7 +172,7 @@ firefox /home/kumarr/Temp/theme-toggle/web-ext-artifacts/theme_toggle-1.0-fx.xpi
 
 1. **Verify Installation:**
    - Open `about:addons`
-   - Look for "Theme Toggle" in the list
+   - Look for "Theme Switch" in the list
    - Confirm it's enabled
 
 2. **Test Functionality:**
